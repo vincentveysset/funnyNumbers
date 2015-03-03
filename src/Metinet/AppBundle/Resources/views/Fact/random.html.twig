@@ -1,0 +1,12 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}MetinetAppBundle:Fact:home{% endblock %}
+
+{% block body %}
+<h1>Random Fact</h1>
+
+<li>{{ fact.number }} : {{ fact.summary }}</li>
+
+<a href="{{ path('home') }}">Return at home</a>
+
+{% endblock %}

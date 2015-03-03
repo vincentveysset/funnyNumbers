@@ -8,21 +8,44 @@
 
 namespace Metinet\AppBundle\Repository;
 
+use Metinet\AppBundle\Entity\Fact;
+
 class InMemoryFactRepository implements FactRepository {
+
+    private $facts = [];
+
+    public function __contruct() {
+
+        $this->save( new Fact( 9000, "Longueur cannalisation France"));
+        $this->save( new Fact( 42, "Réponse à l'univers"));
+    }
 
     public function findAll () {
 
-        $facts =  [
-            [
-                "number" => 900000,
-                "summary" => "La longueur en kilomètres du réseau de canalisations d'eau potable français"
-            ],
-            [
-                "number" => 5,
-                "summary" => "C'est le nombre de rhinocéroos blancs du Nord encore en vie : deux dans des zoos, trois dans une réserve kenyane"
-            ]
-        ];
+        $facts = $this->facts;
 
         return $facts;
+    }
+
+    public function randomFact() {
+
+        $index = array_rand($this->facts);
+
+        return $this->facts[$index];
+    }
+
+    public function save(Fact $fact) {
+
+        if(null === $fact->getId()) {
+            $ids = [];
+            foreach ($this->facts as $f) {
+                $ids[] = $f->getId();
+            }
+
+            $id = count($ids) ? max($ids) + 1 : 1;
+
+            $fact->setId($id);
+        }
+        $this->facts[$fact->getId()] = $fact;
     }
 } 

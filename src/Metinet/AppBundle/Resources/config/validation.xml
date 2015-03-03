@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<constraint-mapping>
+
+    <class name="Metinet\AppBundle\Entity\Fact">
+
+        <property name="number">
+            <constraint name="NotBlank"/>
+        </property>
+
+        <property name="summary">
+            <constraint name="NotBlank"/>
+        </property>
+    </class>
+
+</constraint-mapping>

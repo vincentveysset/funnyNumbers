@@ -3,4 +3,10 @@
   <route id="home" path="/">
     <default key="_controller">MetinetAppBundle:Fact:home</default>
   </route>
+  <route id="random" path="/random">
+     <default key="_controller">MetinetAppBundle:Fact:random</default>
+   </route>
+   <route id="submit" path="/submit">
+     <default key="_controller">MetinetAppBundle:Fact:submit</default>
+   </route>
 </routes>

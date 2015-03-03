@@ -1,0 +1,12 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}MetinetAppBundle:Fact:home{% endblock %}
+
+{% block body %}
+    <h1>Add Fact</h1>
+
+    {{ form(form) }}
+
+<a href="{{ path('home') }}">Return at home without submit</a>
+
+{% endblock %}

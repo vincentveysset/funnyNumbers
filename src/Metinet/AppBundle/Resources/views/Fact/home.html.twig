@@ -3,7 +3,7 @@
 {% block title %}MetinetAppBundle:Fact:home{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Fact:home page</h1>
+<h1>All of Facts</h1>
 
 <ol>
 
@@ -14,4 +14,7 @@
     {% endfor %}
 
 </ol>
+
+<a href="{{ path('random') }}">Random Fact</a><br />
+<a href="{{ path('submit') }}">Submit Fact</a>
 {% endblock %}
