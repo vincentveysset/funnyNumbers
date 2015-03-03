@@ -1,0 +1,17 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}MetinetAppBundle:Fact:home{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Fact:home page</h1>
+
+<ol>
+
+    {% for fact in facts %}
+
+        <li>{{ fact.number }} : {{ fact.summary }}</li>
+
+    {% endfor %}
+
+</ol>
+{% endblock %}

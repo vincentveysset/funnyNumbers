@@ -13,4 +13,18 @@
         </service>
     </services>
     -->
+
+    <services>
+
+        <service id="metinet_app.in_memory_fact" class="Metinet\AppBundle\Repository\InMemoryFactRepository" />
+
+        <service id="metinet_app.mysql_fact" class="Metinet\AppBundle\Repository\MysqlFactRepository">
+            <argument>%database_host%</argument>
+            <argument>%database_user%</argument>
+            <argument>%database_password%</argument>
+            <argument>%database_name%</argument>
+        </service>
+
+    </services>
+
 </container>
