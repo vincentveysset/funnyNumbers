@@ -10,6 +10,7 @@ namespace Metinet\AppBundle\Entity;
 
 class Fact {
 
-    private $numbers;
+    private $id;
+    private $number;
     private $summary;
 }
