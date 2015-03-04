@@ -22,7 +22,7 @@ class DoctrineFactRepository implements FactRepository {
 
     public function findAll() {
 
-        $facts = $this->entityManager->getRepository("MetinetAppBundle:Fact")->findAll();
+        $facts = $this->entityManager->getRepository("MetinetAppBundle:Fact")->findByStatus(1);
 
         return $facts;
     }
@@ -30,7 +30,7 @@ class DoctrineFactRepository implements FactRepository {
     public function randomFact() {
 
         $connection = $this->entityManager->getConnection();
-        $ids = $connection->fetchAll("SELECT id FROM fact;");
+        $ids = $connection->fetchAll("SELECT id FROM fact WHERE status=1;");
         $randomId = $ids[array_rand($ids)]["id"];
 
         $query = $this->entityManager->createQuery(
@@ -45,6 +45,20 @@ class DoctrineFactRepository implements FactRepository {
         // Ma soluce
         //$facts = $this->entityManager->getRepository("MetinetAppBundle:Fact")->findAll();
         //return $facts[rand(0, count($facts) - 1)];
+    }
+
+    public function findOne($id) {
+
+        $fact = $this->entityManager->getRepository("MetinetAppBundle:Fact")->find($id);
+
+        return $fact;
+    }
+
+    public function findFacts() {
+
+        $facts = $this->entityManager->getRepository("MetinetAppBundle:Fact")->findByStatus(0);
+
+        return $facts;
     }
 
     public function save(Fact $fact) {

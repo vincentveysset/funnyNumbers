@@ -9,4 +9,7 @@
    <route id="submit" path="/submit">
      <default key="_controller">MetinetAppBundle:Fact:submit</default>
    </route>
+    <route id="admin" path="/admin">
+        <default key="_controller">MetinetAppBundle:Fact:admin</default>
+    </route>
 </routes>

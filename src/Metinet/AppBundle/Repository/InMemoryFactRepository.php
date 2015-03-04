@@ -34,6 +34,10 @@ class InMemoryFactRepository implements FactRepository {
         return $this->facts[$index];
     }
 
+    public function findFacts() {
+
+    }
+
     public function save(Fact $fact) {
 
         if(null === $fact->getId()) {

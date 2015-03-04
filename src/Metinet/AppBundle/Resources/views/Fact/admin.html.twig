@@ -1,0 +1,20 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}MetinetAppBundle:Fact:home{% endblock %}
+
+{% block body %}
+    <h1>Facts Moderation</h1>
+
+    {% for fact in facts %}
+
+        {% include 'MetinetAppBundle:Fact/partials:fact_template.html.twig' %}
+        <form method="POST" action="">
+            <input type="hidden" name="id" value="{{ fact.id }}" />
+            <input type="submit" name="action" value="Validate" />
+            <input type="submit" name="action" value="Delete" />
+        </form>
+
+
+    {% endfor %}
+
+{% endblock %}

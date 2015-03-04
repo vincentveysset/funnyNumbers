@@ -11,14 +11,12 @@ namespace Metinet\AppBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class FactType extends AbstractType {
+class FactValidationType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('number', 'number')
-                ->add('summary', 'textarea')
-                ->add('email', 'email')
-                ->add('send', 'submit');
+        $builder->add('valid', 'submit')
+                ->add('refuse', 'submit');
     }
 
     public function getName()

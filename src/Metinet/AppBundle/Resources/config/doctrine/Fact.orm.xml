@@ -10,5 +10,7 @@
         </id>
         <field name="number" column="number" type="decimal" length="10" />
         <field name="summary" column="summary" type="text" />
+        <field name="email" column="email" type="text" />
+        <field name="status" column="status" type="integer" />
     </entity>
 </doctrine-mapping>

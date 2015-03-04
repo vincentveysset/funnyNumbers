@@ -10,11 +10,18 @@ namespace Metinet\AppBundle\Entity;
 
 class Fact {
 
+    const STATUS_MODERATION = 0;
+    const STATUS_VALIDATE = 1;
+    const STATUS_NOT_VALIDATE = 2;
+
     private $id;
     private $number;
     private $summary;
+    private $email;
+    private $status;
 
     public function __construct() {
+        $this->status = 0;
     }
 
     /**
@@ -66,5 +73,37 @@ class Fact {
     public function setSummary($summary)
     {
         $this->summary = $summary;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
     }
 }

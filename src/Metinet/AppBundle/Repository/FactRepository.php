@@ -15,5 +15,9 @@ interface FactRepository {
 
     public function randomFact();
 
+    public function findFacts();
+
+    public function findOne($id);
+
     public function save(Fact $fact);
 } 
