@@ -5,16 +5,11 @@
 {% block body %}
 <h1>All of Facts</h1>
 
-<ol>
 
     {% for fact in facts %}
 
-        <li>{{ fact.number }} : {{ fact.summary }}</li>
+        {% include 'MetinetAppBundle:Fact/partials:fact_template.html.twig' %}
 
     {% endfor %}
 
-</ol>
-
-<a href="{{ path('random') }}">Random Fact</a><br />
-<a href="{{ path('submit') }}">Submit Fact</a>
 {% endblock %}

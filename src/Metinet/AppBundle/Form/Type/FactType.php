@@ -15,18 +15,13 @@ class FactType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('gender_code', new GenderType(), array(
-            'empty_value' => 'Choose a gender',
-        ));
-    }
-
-    public function getParent()
-    {
-        return 'choice';
+        $builder->add('number', 'number')
+                ->add('summary', 'textarea')
+                ->add('send', 'submit');
     }
 
     public function getName()
     {
-        return 'gender';
+        return 'fact';
     }
 } 

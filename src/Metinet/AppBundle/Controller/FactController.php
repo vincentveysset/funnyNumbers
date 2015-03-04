@@ -36,11 +36,7 @@ class FactController extends Controller
 
         $fact = new Fact();
 
-        $form = $this->createFormBuilder($fact)
-            ->add('number', 'number')
-            ->add('summary', 'text')
-            ->add('save', 'submit')
-            ->getForm();
+        $form = $this->createForm(new FactType(), $fact);
 
         $form->handleRequest($request);
 

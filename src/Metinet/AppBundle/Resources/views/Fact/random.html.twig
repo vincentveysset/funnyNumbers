@@ -5,8 +5,6 @@
 {% block body %}
 <h1>Random Fact</h1>
 
-<li>{{ fact.number }} : {{ fact.summary }}</li>
-
-<a href="{{ path('home') }}">Return at home</a>
+{% include 'MetinetAppBundle:Fact/partials:fact_template.html.twig' %}
 
 {% endblock %}
