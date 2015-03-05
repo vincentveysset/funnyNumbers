@@ -65,27 +65,29 @@ class FactController extends Controller
             $fact = $repo->findOne($request->get('id'));
 
             if($request->get('action') == "Validate") {
-                $fact->getStatus(1);
+                $fact->setStatus(1);
 
+                /*
                 $message = \Swift_Message::newInstance()
                     ->setSubject('Validation of your Fact')
                     ->setFrom('send@example.com')
                     ->setTo($fact->getEmail())
                     ->setBody("Bravo, votre fact a été validée par l'équipe ! Merci de votre participation")
-                ;
+                ;*/
             }
             else {
                 $fact->setStatus(2);
 
+                /*
                 $message = \Swift_Message::newInstance()
                     ->setSubject('Refuse of your Fact')
                     ->setFrom('send@example.com')
                     ->setTo($fact->getEmail())
                     ->setBody("Désolé, votre fact n'a pas été validée par l'équipe ! Merci de votre participation")
-                ;
+                ;*/
             }
 
-            $this->get('mailer')->send($message);
+            //$this->get('mailer')->send($message);
 
             $repo->save($fact);
 
