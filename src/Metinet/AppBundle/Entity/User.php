@@ -19,6 +19,12 @@ class User implements UserInterface {
     private $roles;
     private $salt;
 
+    function __construct()
+    {
+        $this->roles = ["ROLE_USER"];
+        $this->salt = "";
+    }
+
     /**
      * @return mixed
      */

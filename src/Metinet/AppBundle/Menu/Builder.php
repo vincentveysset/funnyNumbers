@@ -26,8 +26,12 @@ class Builder extends ContainerAware
             $menu->addChild('Deconnexion', array('route' => 'logout'));
         }
 
-        else {
+        elseif ($this->container->get('security.context')->isGranted('ROLE_USER')){
+            $menu->addChild('Deconnexion', array('route' => 'logout'));
+        }
+        else{
             $menu->addChild('Connexion', array('route' => 'login'));
+            $menu->addChild('Register', array('route' => 'register'));
         }
 
         // access services from the container!

@@ -17,4 +17,8 @@
     </route>
     <route id="login_check" pattern="/login_check" />
     <route id="logout" pattern="/logout" />
+
+    <route id="register" path="/register">
+        <default key="_controller">MetinetAppBundle:User:register</default>
+    </route>
 </routes>

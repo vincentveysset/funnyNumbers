@@ -3,6 +3,8 @@
 namespace Metinet\AppBundle\Controller;
 
 use Metinet\AppBundle\Entity\Fact;
+use Metinet\AppBundle\Entity\User;
+use Metinet\AppBundle\Form\Type\RegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Metinet\AppBundle\Repository\InMemoryFactRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -67,8 +69,7 @@ class FactController extends Controller
             if($request->get('action') == "Validate") {
                 $fact->setStatus(1);
 
-                /*
-                $message = \Swift_Message::newInstance()
+                /*$message = \Swift_Message::newInstance()
                     ->setSubject('Validation of your Fact')
                     ->setFrom('send@example.com')
                     ->setTo($fact->getEmail())
@@ -78,8 +79,7 @@ class FactController extends Controller
             else {
                 $fact->setStatus(2);
 
-                /*
-                $message = \Swift_Message::newInstance()
+                /*$message = \Swift_Message::newInstance()
                     ->setSubject('Refuse of your Fact')
                     ->setFrom('send@example.com')
                     ->setTo($fact->getEmail())
@@ -98,4 +98,5 @@ class FactController extends Controller
             'facts' => $facts,
         ));
     }
+
 }
