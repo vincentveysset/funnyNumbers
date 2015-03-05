@@ -12,4 +12,9 @@
     <route id="admin" path="/admin">
         <default key="_controller">MetinetAppBundle:Fact:admin</default>
     </route>
+    <route id="login" pattern="/login">
+        <default key="_controller">MetinetAppBundle:Security:login</default>
+    </route>
+    <route id="login_check" pattern="/login_check" />
+    <route id="logout" pattern="/logout" />
 </routes>

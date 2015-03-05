@@ -21,6 +21,15 @@ class Builder extends ContainerAware
         $menu->addChild('Random', array('route' => 'random'));
         $menu->addChild('Submit', array('route' => 'submit'));
 
+        if ($this->container->get('security.context')->isGranted('ROLE_ADMIN')) {
+            $menu->addChild('Moderation', array('route' => 'admin'));
+            $menu->addChild('Deconnexion', array('route' => 'logout'));
+        }
+
+        else {
+            $menu->addChild('Connexion', array('route' => 'login'));
+        }
+
         // access services from the container!
         //$em = $this->container->get('doctrine')->getManager();
         // findMostRecent and Blog are just imaginary examples

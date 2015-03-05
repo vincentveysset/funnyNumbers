@@ -84,7 +84,7 @@ class FactController extends Controller
                     ->setBody("Désolé, votre fact n'a pas été validée par l'équipe ! Merci de votre participation")
                 ;
             }
-            
+
             $this->get('mailer')->send($message);
 
             $repo->save($fact);
